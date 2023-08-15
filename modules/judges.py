@@ -19,6 +19,7 @@ from PyQt6.QtWidgets import QApplication, QMainWindow
 from PyQt6.QtNetwork import QNetworkCookie
 from time import sleep
 from modules import scrapers
+import random
 
 path = os.path.dirname(__file__)
 lojCookiePath = path + os.sep + "cookies" + os.sep + "lojUserCookie.json"
@@ -389,12 +390,15 @@ class CF:
                         print()
 
                     successfullySubmitted  = successfullySubmitted + 1
+                    
                     # check verdict and verify
                     # timeout =
                     # while(1)
+                random_sleep_time = random.uniform(100, 5000)
+                time.sleep(random_sleep_time)
             elif((submitSolvedOnes == False)):
                 print(problemNumber + " - " + problemDetails[1] + " -> solved already")
-
+            
         pass
 
     def submitSolution(self, solution):
